@@ -103,9 +103,13 @@ private:
 						}
 					}
 				case layerTwo:
-					
+					for(i = 0; i < FILTER_NUMBER_SECOND; i++){
+						for(j = 0; j < FIRST_CONVLAYER_SIZE-FILTER_SIZE+1; j++){
+							matriceMult(FILTER_NUMBER_SECOND, i, j);
+						}
+					}
 				case layerThree:
-				
+					
 				default:
 					cout << "DEFAULT CASE"<<endl;
 					break;
