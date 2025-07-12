@@ -3,6 +3,8 @@
 #include <random>
 #include <vector>
 
+#using namespace std;
+
 #define FILTER_SIZE = 5
 #define FILTER_NUMBER_FIRST = 6
 #define FILTER_NUMBER_SECOND = 16
@@ -32,15 +34,15 @@ private:
 	double convThreeBias[FILTER_NUMBER_THIRD];
 
 	// fully connected layers matrices
-	std::vector<FCNeuron> fcLayerOne;
+	vector<FCNeuron> fcLayerOne;
 	fcLayerOne.reserve(120);
 	double fcLayerOneBias[120];
 	
-	std::vector<FCNeuron> fcLayerTwo;
+	vector<FCNeuron> fcLayerTwo;
 	fcLayerTwo.reserve(86);
 	double fcLayerTwoBias[86];
 	
-	std::vector<FCNeuron> fcLayerThree;
+	vector<FCNeuron> fcLayerThree;
 	fcLayerThree.reserve(20);
 	double fcLayerThreeBias[10];
 	
@@ -49,9 +51,6 @@ private:
 	double secondLayerFilter[FILTER_NUMBER_SECOND][FILTER_SIZE][FILTER_SIZE];
 	double thirdLayerFilter[THIRD_CONVLAYER_SIZE][FILTER_SIZE][FILTER_SIZE];
 	
-	double tanhDerivative(double value){//TEKRAR BAK BURAYA EKSIK VAR
-		return 1 - power(tanh(value),2)
-	}
 	
 	void matriceMult(int filterNumber, int row, int column){
 		int filterRowCounter = 0;
